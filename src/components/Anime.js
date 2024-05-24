@@ -52,8 +52,6 @@ const theme = createMuiTheme({
 
 function Anime(props) {
   const { title, broadcastInfoList, classes } = props;
-  console.log(props);
-
 
   switch (true) {
     case broadcastInfoList === undefined || broadcastInfoList.length === 0:
