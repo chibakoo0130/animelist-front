@@ -2,7 +2,8 @@ import * as actionTypes from '../utils/actionTypes';
 
 const initialState = {
   isFetching: false,
-  items: []
+  items: [],
+  error: undefined,
 };
 
 const AnimeListReducer = (state = initialState, action) => {
@@ -18,6 +19,7 @@ const AnimeListReducer = (state = initialState, action) => {
         ...state,
         isFetching: false,
         items: action.items,
+        error: action.error,
       };
     case actionTypes.GET_ANIMES_FAILURE:
       return {

@@ -36,6 +36,8 @@ class AnimeList extends React.Component {
     let animeCards =[];
     const animeItemsLength = animeItems.length;
     
+    const error = AnimeListReducer.error;
+    
     for (let index=0; index<animeItemsLength; index++){
       animeCards.push(<Anime key={index} {...animeItems[index]}/>);
     }
@@ -50,6 +52,11 @@ class AnimeList extends React.Component {
         </div>
       );
     
+    } else if (error) {
+      return (
+        <p>エラーが発生しました。<br></br>{error.response.data.errorMessage}</p>
+      );
+
     // カードを表示
     } else {
       return (
